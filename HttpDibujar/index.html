@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        label{
+            display:block;
+            width:200px;
+            float:left;
+            height:30px;
+            margin-bottom:5px;
+        }
+
+        input{
+            display:block;
+            width:400px;
+            float:left;
+            height:30px;
+            margin-bottom:5px;
+            box-sizing:border-box;
+        }
+        form div {
+            width: 600px;
+            margin:auto;
+        }
+        input[type=submit] {
+            margin: 10px auto;
+            float: none;
+            padding: 5px 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <form method="post" action="/dibujar">
+        <div>
+            <h1>Controles de dibujo</h1>
+
+            <label>Tipo de figura</label>
+            <select name="figura">
+                <option>Circulo</option>
+                <option>Rectángulo</option>
+            </select>
+            <label>Ancho de la figura:</label>
+            <input name="ancho" type="number" value="0" min="1" max="100" step="0.1" />
+            <label>Altura:</label>
+            <input name="altura" type="number" value="0" min="1" max="100" step="0.1" />
+            <label>Color:</label>
+            <input name="color" type="color" />
+            <label>Posicion X:</label>
+            <input name="x" type="number" max="2000" min="0" value="0" />
+            <label>Posicion Y:</label>
+            <input name="y" type="number" max="2000" min="0" value="0" />
+        </div>
+        <input type="submit" value="Enviar" />
+    </form>
+</body>
+</html>

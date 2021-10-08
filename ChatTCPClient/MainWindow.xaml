@@ -1,0 +1,54 @@
+﻿<Window x:Class="ChatTCPClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChatTCPClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:TCPClient x:Name="chat"></local:TCPClient>
+    </Window.DataContext>
+
+    <ContentControl>
+        <ContentControl.Style>
+            <Style TargetType="ContentControl">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Source={x:Reference chat}, Path=Conectado}" Value="False">
+                        <Setter Property="Content">
+                            <Setter.Value>
+                                <StackPanel Margin="10">
+                                    <Label>Nombre de usuario</Label>
+                                    <TextBox Text="{Binding Username}"></TextBox>
+                                    <Label>IP del servidor</Label>
+                                    <TextBox Text="{Binding ServerIP}"></TextBox>
+                                    <Button Command="{Binding ConectarCommand}" Width="100" Margin="0,10,0,0">Conectar</Button>
+                                </StackPanel>
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding Source={x:Reference chat}, Path=Conectado}" Value="True">
+                        <Setter Property="Content">
+                            <Setter.Value>
+                                <DockPanel>
+                                    <DockPanel DockPanel.Dock="Bottom" Margin="10">
+                                        <Button Command="{Binding EnviarCommand}" DockPanel.Dock="Right" Padding="20,5" Margin="10,0,0,0">Enviar</Button>
+                                        <TextBox Text="{Binding Mensaje}"></TextBox>
+                                    </DockPanel>
+                                    <ListBox Margin="10,10,10,0" ItemsSource="{Binding Mensajes}"></ListBox>
+                                </DockPanel>
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ContentControl.Style>
+    </ContentControl>
+    
+    
+    
+
+    <!--
+    
+    -->
+</Window>
