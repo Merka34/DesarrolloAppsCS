@@ -26,6 +26,7 @@ namespace HttpDibujar
         public LienzoVirtual()
         {
             dispatcher = Dispatcher.CurrentDispatcher;
+            Iniciar();
            // Deserealizar();
         }
         public void Iniciar()
@@ -93,7 +94,7 @@ namespace HttpDibujar
 
         void CrearShape(string figura, double altura, double ancho, string color, int x, int y)
         {
-            Shape f = figura == "Rectangulo" ? new Rectangle() : new Ellipse();
+            Shape f = figura == "Rectángulo" ? new Rectangle() : new Ellipse();
             f.Width = ancho;
             f.Height = altura;
             f.Fill = (SolidColorBrush)new BrushConverter().ConvertFrom(color);

@@ -23,8 +23,7 @@ namespace HttpDibujar
         public MainWindow()
         {
             InitializeComponent();
-            lienzo.Iniciar();
         }
-        LienzoVirtual lienzo = new();
+        
     }
 }

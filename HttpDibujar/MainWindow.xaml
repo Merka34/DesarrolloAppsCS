@@ -6,6 +6,10 @@
         xmlns:local="clr-namespace:HttpDibujar"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:LienzoVirtual></local:LienzoVirtual>
+    </Window.DataContext>
+
     <ItemsControl ItemsSource="{Binding Figuras}">
         <ItemsControl.ItemsPanel>
             <ItemsPanelTemplate>
