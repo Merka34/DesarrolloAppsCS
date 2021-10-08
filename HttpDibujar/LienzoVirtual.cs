@@ -106,7 +106,7 @@ namespace HttpDibujar
 
         void Serializar()
         {
-            string json = JsonConvert.SerializeObject(Figuras);
+            string json = JsonConvert.SerializeObject(Figuras); 
             File.WriteAllText("figuras.json", json);
         }
 
